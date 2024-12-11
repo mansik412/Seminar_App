@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Questions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="body-display">
+    <div class="container">
+        <h2>Questions</h2>
+        <ul id="questions-list">
+            <!-- Questions will be dynamically inserted here -->
+        </ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            loadQuestions();
+        });
+
+        function loadQuestions() {
+            fetch('/get-questions')
+                .then(response => response.json())
+                .then(questions => {
+                    const questionsList = document.getElementById('questions-list');
+                    questionsList.innerHTML = '';  // Clear the list
+
+                    questions.forEach(question => {
+                        const listItem = document.createElement('li');
+                        listItem.innerHTML = `
+                            <p>${question.question}</p>
+                        `;
+                        questionsList.appendChild(listItem);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+    <script src="display.js"></script>
+</body>
+</html>

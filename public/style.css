@@ -1,0 +1,247 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 10px;
+}
+
+#body-submit {
+    background-image: url("./images/20241210_UI_Background.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+
+#body-display {
+    background-image: url("./images/20241210_UI_desktop_bg.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#container-submit {
+    max-width: 600px;
+    margin: 2px;
+    padding: 20px;
+}
+
+
+/* Header */
+.header {
+    color: 000000;
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+#container-submit textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    margin: 10px -10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#questions-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#questions-list li {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+}
+
+/* Toggle Switch Styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #4CAF50;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+
+/* General styling for the list items */
+li {
+    margin-bottom: 20px;  /* Add spacing between each question */
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Question controls container: Keep buttons at the top of each question */
+.question-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;  /* Add space below the toggle buttons */
+}
+
+/* Smaller Toggle Switch */
+.switch.small {
+    width: 40px;
+    height: 22px;
+}
+
+.switch.small input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch.small .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;  /* Default gray */
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.switch.small .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+/* When the toggle is checked (Approved or Answered) */
+input:checked + .slider {
+    background-color: #4CAF50; /* Green for Approved and Answered */
+}
+
+/* When the toggle is unchecked (Rejected or Unanswered) */
+input:not(:checked) + .slider {
+    background-color: #ccc; /* Gray for unselected (default state) */
+}
+
+/* Color changes for approved status */
+.slider.approved {
+    background-color: #4CAF50; /* Green */
+}
+
+.slider.rejected {
+    background-color: #f44336; /* Red for rejected */
+}
+
+.slider.answered {
+    background-color: #4CAF50; /* Green for answered */
+}
+
+/* Move the circle to the other side for checked toggle */
+input:checked + .slider:before {
+    transform: translateX(18px);
+}
+
+.switch.small p {
+    margin: 0;
+    padding-left: 5px;
+}
+
+
+/* Styling for the "Delete All" button */
+.delete-all-btn {
+    background-color: #f44336; /* Red for danger */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    width: 200px;
+    display: block;
+    margin: 10px auto;
+}
+
+.delete-all-btn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
